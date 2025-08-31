@@ -30,6 +30,7 @@ export default defineConfig({
       reporter: ["text", "html"],
       exclude: [
         "node_modules/",
+        "playwright-report/",
         "playwright.*",
         "src/graphql/generated/**",
         "src/generated/**",
