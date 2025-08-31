@@ -1,8 +1,12 @@
-import { gql } from "@apollo/client";
-
-export const GET_CHARACTER = gql`
-  query GetCharacter($id: ID!) {
-    character(id: $id) {
+query GetAllCharacters($page: Int) {
+  characters(page: $page) {
+    info {
+      count
+      pages
+      next
+      prev
+    }
+    results {
       id
       name
       status
@@ -18,4 +22,4 @@ export const GET_CHARACTER = gql`
       }
     }
   }
-`;
+}

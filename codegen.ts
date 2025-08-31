@@ -2,11 +2,14 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: "https://rickandmortyapi.com/graphql",
-  documents: "src/graphql/**/*.ts",
+  documents: "src/graphql/**/*.graphql",
   generates: {
     "./src/graphql/generated/": {
       preset: "client",
-      plugins: [],
+      config: {
+        useTypeImports: true,
+        enumsAsTypes: true,
+      },
     },
   },
 };
