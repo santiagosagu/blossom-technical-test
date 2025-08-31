@@ -74,6 +74,7 @@ export const Sidebar = () => {
             )}
           </button>
           <button
+            data-testid="filter-button"
             aria-label="show filters"
             onClick={() => {
               if (!showFilters) {
@@ -105,6 +106,7 @@ export const Sidebar = () => {
               <div className="flex gap-1">
                 {filterListOptionsType.map((type) => (
                   <button
+                    data-testid={`filter-option-starred-${type}`}
                     key={type}
                     onClick={() =>
                       setTempFilters((prev) => ({
@@ -127,6 +129,7 @@ export const Sidebar = () => {
               <div className="flex gap-1">
                 {filterListOptionsSpecies.map((species) => (
                   <button
+                    data-testid={`filter-option-species-${species}`}
                     key={species}
                     onClick={() =>
                       setTempFilters((prev) => ({
@@ -145,6 +148,7 @@ export const Sidebar = () => {
             </div>
 
             <button
+              data-testid="filter-apply-button"
               onClick={handleApplyFilters}
               className="w-full bg-primary-700 rounded-md py-2 text-primary-100 cursor-pointer"
             >
